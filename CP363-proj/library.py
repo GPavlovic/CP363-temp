@@ -47,12 +47,108 @@ def insertMovie(db):
     length = input("What is the length of the movie?").strip()
     release = input("What is the release date of the movie?(dd/mm/yyyy)").strip()
     movie_info = (title, genre, rating, length, release)
-    # The insert actor SQL statement.
+    # The insert movie SQL statement.
     insert_movie = ("INSERT INTO MOVIE"
                     "(Title, Genre, Rating, Length, ReleaseDate)"
                     "VALUES(%s, %s, %s, %s, %s)")
     # Execute the statement with the given information.
     cursor.execute(insert_movie, movie_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+"""
+-------------------------------------------------------
+Query to insert a studio into the database.
+-------------------------------------------------------
+"""
+def insertStudio(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the studio from the user.
+    name = input("What is the name of the studio?").strip()
+    address = input("What is the address of the studio?").strip()
+    studio_info = (name, address)
+    # The insert studio SQL statement.
+    insert_studio = ("INSERT INTO STUDIO"
+                    "(Name, Address)"
+                    "VALUES(%s, %s)")
+    # Execute the statement with the given information.
+    cursor.execute(insert_studio, studio_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+
+"""
+-------------------------------------------------------
+Query to insert a channel into the database.
+-------------------------------------------------------
+"""
+def insertChannel(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the channel from the user.
+    name = input("What is the name of the channel?").strip()
+    address = input("What is the address of the channel?").strip()
+    channel_info = (name, address)
+    # The insert channel SQL statement.
+    insert_channel = ("INSERT INTO CHANNEL"
+                    "(Name, Address)"
+                    "VALUES(%s, %s)")
+    # Execute the statement with the given information.
+    cursor.execute(insert_channel, channel_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+"""
+-------------------------------------------------------
+Query to insert a critic into the database.
+-------------------------------------------------------
+"""
+def insertCritic(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the channel from the user.
+    name = input("What is the name of the critic?").strip()
+    city = input("What city is the critic from?").strip()
+    rep = input("What is the reputation of the critic?(x/10)").strip()
+    critic_info = (name, city, rep)
+    # The insert critic SQL statement.
+    insert_critic = ("INSERT INTO CRITIC"
+                    "(Name, City, Reputation)"
+                    "VALUES(%s, %s, %s)")
+    # Execute the statement with the given information.
+    cursor.execute(insert_critic, critic_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+"""
+-------------------------------------------------------
+Query to remove an actor from the database.
+-------------------------------------------------------
+"""
+def removeActor(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the channel from the user.
+    name = input("What is the name of the channel?").strip()
+    actor_info = (name)
+    # The remove actor SQL statement.
+    remove_actor = ("DELETE FROM ACTOR"
+                    "WHERE name = %s")
+    # Execute the statement with the given information.
+    cursor.execute(remove_actor, actor_info)
     # Make sure the data is committed to the db.
     db.commit();
     # Close 
