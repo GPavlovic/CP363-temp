@@ -177,3 +177,48 @@ def removeMovie(db):
     cursor.close()
     db.close()
     return
+"""
+-------------------------------------------------------
+Query to remove an studio from the database.
+-------------------------------------------------------
+"""
+def removeStudio(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the studio from the user.
+    name = input("What is the name of the studio?").strip()
+    studio_info = (name)
+    # The remove studio SQL statement.
+    remove_studio = ("DELETE FROM STUDIO"
+                    "WHERE name = %s")
+    # Execute the statement with the given information.
+    cursor.execute(remove_studio, studio_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+"""
+-------------------------------------------------------
+Query to remove an critic from the database.
+-------------------------------------------------------
+"""
+def removeCritic(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the critic from the user.
+    name = input("What is the name of the critic?").strip()
+    critic_info = (name)
+    # The remove critic SQL statement.
+    remove_critic = ("DELETE FROM CRITIC"
+                    "WHERE name = %s")
+    # Execute the statement with the given information.
+    cursor.execute(remove_critic, critic_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+
