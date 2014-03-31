@@ -12,7 +12,7 @@ db = mysql.connector.connect(user = 'root',
                              host = 'localhost',
                              password = '',
                              database = '')
-print( "Please select one of the following operations (1-3): " )
+print( "Please select one of the following operations (1-4): " )
 print( "1 - Insert" )
 print( "2 - Retrieve" )
 print( "3 - Remove" )
@@ -20,7 +20,7 @@ print( "4 - Exit" )
 
 opChoice=int(input())
 if(opChoice==1):
-    print( "Please select one of the following attributes (1-5): " )
+    print( "Please select one of the following attributes (1-6): " )
     print( "1 - Insert Actor" )
     print( "2 - Insert Movie" )
     print( "3 - Insert Studio" )
@@ -43,7 +43,7 @@ if(opChoice==1):
     else:
         print( "Error. Incorrect Input." )
 elif(opChoice==2):
-    print( "Please select one of the following attributes (1-5): " )
+    print( "Please select one of the following attributes (1-6): " )
     print( "1 - Retrieve Actor" )
     print( "2 - Retrieve Movie" )
     print( "3 - Retrieve Studio" )
@@ -66,7 +66,7 @@ elif(opChoice==2):
     else:
         print( "Error. Incorrect Input." )
 elif(opChoice==3):
-    print( "Please select one of the following attributes (1-5): " )
+    print( "Please select one of the following attributes (1-6): " )
     print( "1 - Remove Actor" )
     print( "2 - Remove Movie" )
     print( "3 - Remove Studio" )
