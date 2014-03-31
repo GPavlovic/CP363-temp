@@ -222,28 +222,7 @@ def removeCritic(db):
     db.close()
     return
 
-"""
--------------------------------------------------------
-Query to remove an movie from the database.
--------------------------------------------------------
-"""
-def removeMovie(db):
-    # Get cursor.
-    cursor = db.cursor()
-    # Get information about the channel from the user.
-    title = input("What is the name of the movie?").strip()
-    movie_info = (title)
-    # The remove actor SQL statement.
-    remove_movie = ("DELETE FROM MOVIE"
-                    "WHERE title = %s")
-    # Execute the statement with the given information.
-    cursor.execute(remove_movie, movie_info)
-    # Make sure the data is committed to the db.
-    db.commit();
-    # Close 
-    cursor.close()
-    db.close()
-    return
+
 """
 -------------------------------------------------------
 Query to remove an movie from the database.
