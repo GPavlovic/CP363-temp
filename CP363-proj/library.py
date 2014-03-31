@@ -177,6 +177,7 @@ def removeMovie(db):
     cursor.close()
     db.close()
     return
+
 """
 -------------------------------------------------------
 Query to remove an studio from the database.
@@ -199,6 +200,7 @@ def removeStudio(db):
     cursor.close()
     db.close()
     return
+
 """
 -------------------------------------------------------
 Query to remove an critic from the database.
@@ -246,4 +248,3 @@ def removeChannel(db):
     cursor.close()
     db.close()
     return
-
