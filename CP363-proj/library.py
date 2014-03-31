@@ -142,7 +142,7 @@ def removeActor(db):
     # Get cursor.
     cursor = db.cursor()
     # Get information about the channel from the user.
-    name = input("What is the name of the channel?").strip()
+    name = input("What is the name of the actor?").strip()
     actor_info = (name)
     # The remove actor SQL statement.
     remove_actor = ("DELETE FROM ACTOR"
