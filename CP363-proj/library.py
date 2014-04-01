@@ -146,7 +146,7 @@ def removeActor(db):
     actor_info = (name)
     # The remove actor SQL statement.
     remove_actor = ("DELETE FROM ACTOR"
-                    "WHERE name = %s")
+                    "WHERE Name = %s")
     # Execute the statement with the given information.
     cursor.execute(remove_actor, actor_info)
     # Make sure the data is committed to the db.
@@ -168,7 +168,7 @@ def removeMovie(db):
     movie_info = (title)
     # The remove actor SQL statement.
     remove_movie = ("DELETE FROM MOVIE"
-                    "WHERE title = %s")
+                    "WHERE Title = %s")
     # Execute the statement with the given information.
     cursor.execute(remove_movie, movie_info)
     # Make sure the data is committed to the db.
@@ -191,7 +191,7 @@ def removeStudio(db):
     studio_info = (name)
     # The remove studio SQL statement.
     remove_studio = ("DELETE FROM STUDIO"
-                    "WHERE name = %s")
+                     "WHERE Name = %s")
     # Execute the statement with the given information.
     cursor.execute(remove_studio, studio_info)
     # Make sure the data is committed to the db.
@@ -214,7 +214,7 @@ def removeCritic(db):
     critic_info = (name)
     # The remove critic SQL statement.
     remove_critic = ("DELETE FROM CRITIC"
-                    "WHERE name = %s")
+                     "WHERE Name = %s")
     # Execute the statement with the given information.
     cursor.execute(remove_critic, critic_info)
     # Make sure the data is committed to the db.
@@ -239,9 +239,134 @@ def removeChannel(db):
     channel_info = (name)
     # The remove actor SQL statement.
     remove_channel = ("DELETE FROM CHANNEL"
-                    "WHERE name = %s")
+                      "WHERE Name = %s")
     # Execute the statement with the given information.
     cursor.execute(remove_channel, channel_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+
+"""
+-------------------------------------------------------
+Query to read actor from the database.
+-------------------------------------------------------
+"""
+
+def readActor(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the actor from the user.
+    name = input("What is the name of the actor?").strip()
+    actor_info = (name)
+    # The read actor SQL statement.
+    read_actor = ("SELECT Name, City" 
+                    "FROM ACTOR"
+                    "WHERE Name = %s")
+    # Execute the statement with the given information.
+    cursor.execute(read_actor, actor_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+
+"""
+-------------------------------------------------------
+Query to read movie from the database.
+-------------------------------------------------------
+"""
+
+def readMovie(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the movie from the user.
+    title = input("What is the title of the movie?").strip()
+    movie_info = (title)
+    # The read movie SQL statement.
+    read_movie = ("SELECT Title, Genre, Rating, Length, ReleaseDate" 
+                    "FROM MOVIE"
+                    "WHERE Title = %s")
+    # Execute the statement with the given information.
+    cursor.execute(read_movie, movie_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+
+"""
+-------------------------------------------------------
+Query to read studio from the database.
+-------------------------------------------------------
+"""
+
+def readStudio(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the studio from the user.
+    name = input("What is the name of the studio?").strip()
+    studio_info = (name)
+    # The read studio SQL statement.
+    read_studio = ("SELECT Name, Address" 
+                    "FROM STUDIO"
+                    "WHERE Name = %s")
+    # Execute the statement with the given information.
+    cursor.execute(read_studio, studio_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+
+"""
+-------------------------------------------------------
+Query to read channel from the database.
+-------------------------------------------------------
+"""
+
+def readChannel(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the channel from the user.
+    name = input("What is the name of the channel?").strip()
+    channel_info = (name)
+    # The read channel SQL statement.
+    read_channel = ("SELECT Name, Address" 
+                    "FROM CHANNEL"
+                    "WHERE Name = %s")
+    # Execute the statement with the given information.
+    cursor.execute(read_channel, channel_info)
+    # Make sure the data is committed to the db.
+    db.commit();
+    # Close 
+    cursor.close()
+    db.close()
+    return
+
+"""
+-------------------------------------------------------
+Query to read critic from the database.
+-------------------------------------------------------
+"""
+
+def readCritic(db):
+    # Get cursor.
+    cursor = db.cursor()
+    # Get information about the critic from the user.
+    name = input("What is the name of the critic?").strip()
+    critic_info = (name)
+    # The read critic SQL statement.
+    read_critic = ("SELECT Name, Address, Reputation" 
+                    "FROM CRITIC"
+                    "WHERE Name = %s")
+    # Execute the statement with the given information.
+    cursor.execute(read_critic, critic_info)
     # Make sure the data is committed to the db.
     db.commit();
     # Close 
