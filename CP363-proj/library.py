@@ -27,6 +27,8 @@ def insertActor(db):
     cursor.execute(insert_actor, actor_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm insertion.
+    print("{0} was added to the database of actors!".format(name))
     # Close 
     cursor.close()
     db.close()
@@ -55,6 +57,8 @@ def insertMovie(db):
     cursor.execute(insert_movie, movie_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm insertion.
+    print("{0} was added to the database of movies!".format(title))
     # Close 
     cursor.close()
     db.close()
@@ -79,6 +83,8 @@ def insertStudio(db):
     cursor.execute(insert_studio, studio_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm insertion.
+    print("{0} was added to the database of studios!".format(name))
     # Close 
     cursor.close()
     db.close()
@@ -104,6 +110,8 @@ def insertChannel(db):
     cursor.execute(insert_channel, channel_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm insertion.
+    print("{0} was added to the database of channels!".format(name))
     # Close 
     cursor.close()
     db.close()
@@ -129,6 +137,8 @@ def insertCritic(db):
     cursor.execute(insert_critic, critic_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm insertion.
+    print("{0} was added to the database of critics!".format(name))
     # Close 
     cursor.close()
     db.close()
@@ -151,6 +161,8 @@ def removeActor(db):
     cursor.execute(remove_actor, actor_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm removal.
+    print("{0} was removed from the database of actors!".format(name))
     # Close 
     cursor.close()
     db.close()
@@ -173,6 +185,8 @@ def removeMovie(db):
     cursor.execute(remove_movie, movie_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm removal.
+    print("{0} was removed from the database of movies!".format(title))
     # Close 
     cursor.close()
     db.close()
@@ -196,6 +210,8 @@ def removeStudio(db):
     cursor.execute(remove_studio, studio_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm removal.
+    print("{0} was removed from the database of studios!".format(name))
     # Close 
     cursor.close()
     db.close()
@@ -219,6 +235,8 @@ def removeCritic(db):
     cursor.execute(remove_critic, critic_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm removal.
+    print("{0} was removed from the database of critics!".format(name))
     # Close 
     cursor.close()
     db.close()
@@ -244,6 +262,8 @@ def removeChannel(db):
     cursor.execute(remove_channel, channel_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm removal.
+    print("{0} was removed from the database of channels!".format(name))
     # Close 
     cursor.close()
     db.close()
@@ -269,6 +289,8 @@ def readActor(db):
     cursor.execute(read_actor, actor_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm.
+    print("Found! Actor: {0} City: {1}".format(cursor.Name, cursor.City))
     # Close 
     cursor.close()
     db.close()
@@ -294,6 +316,8 @@ def readMovie(db):
     cursor.execute(read_movie, movie_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm.
+    print("Found! Movie: {0} Genre: {1} Rating: {2} Length: {3} Release Date: {4}".format(cursor.Title, cursor.Genre, cursor.Rating, cursor.Length, cursor.ReleaseDate))
     # Close 
     cursor.close()
     db.close()
@@ -319,6 +343,8 @@ def readStudio(db):
     cursor.execute(read_studio, studio_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm.
+    print("Found! Studio: {0} Address: {1}".format(cursor.Name, cursor.Address))
     # Close 
     cursor.close()
     db.close()
@@ -344,6 +370,8 @@ def readChannel(db):
     cursor.execute(read_channel, channel_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm.
+    print("Found! Channel: {0} Address: {1}".format(cursor.Name, cursor.Address))
     # Close 
     cursor.close()
     db.close()
@@ -369,6 +397,8 @@ def readCritic(db):
     cursor.execute(read_critic, critic_info)
     # Make sure the data is committed to the db.
     db.commit();
+    # Confirm.
+    print("Found! Critic: {0} Address: {1} Reputation: {2}".format(cursor.Name, cursor.Address, cursor.Reputation))
     # Close 
     cursor.close()
     db.close()
